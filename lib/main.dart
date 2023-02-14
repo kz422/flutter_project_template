@@ -24,10 +24,11 @@ class _AppBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const env = String.fromEnvironment('flavor');
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('power!!'),
+      body: Center(
+        child: Text(env),
       ),
     );
   }
