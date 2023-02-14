@@ -19,7 +19,6 @@ class OneCheckBox extends StatefulWidget {
 }
 
 class _OneCheckBoxState extends State<OneCheckBox> {
-
   bool _flag = false;
 
   @override

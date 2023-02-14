@@ -16,4 +16,3 @@ const MaterialColor customSwatch = MaterialColor(
     900: Color(0xff21374A),
   },
 );
-

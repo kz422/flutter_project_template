@@ -5,9 +5,7 @@ import 'package:useful_stuffs/utils/extensions/int_extensions.dart';
 extension DateTimeConverter on DateTime {
   //指定の日時の0時からの分を返す
   double minutesFromZero() {
-    return difference(DateTime(year, month, day, 0, 0, 0))
-        .inMinutes
-        .toDouble();
+    return difference(DateTime(year, month, day, 0, 0, 0)).inMinutes.toDouble();
   }
 
   /*
@@ -152,13 +150,12 @@ extension DateTimeConverter on DateTime {
    */
   List<DateTime> getAllDaysInMonth() {
     final lastDateThisMonth =
-    DateTime(year, month + 1, 1).subtract(const Duration(days: 1));
+        DateTime(year, month + 1, 1).subtract(const Duration(days: 1));
     final firstDateThisMonth = DateTime(year, month, 1);
-    final targetMonthDateList =
-    List<DateTime>.generate(lastDateThisMonth.day, (i) => firstDateThisMonth.add(Duration(days: i)));
+    final targetMonthDateList = List<DateTime>.generate(lastDateThisMonth.day,
+        (i) => firstDateThisMonth.add(Duration(days: i)));
     return targetMonthDateList;
   }
-
 }
 
 extension DateTimeNullConverter on DateTime? {

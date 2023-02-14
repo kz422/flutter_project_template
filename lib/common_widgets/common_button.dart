@@ -42,22 +42,30 @@ class CommonButton extends StatelessWidget {
             vertical: defaultSpacing,
           ),
           side: BorderSide(
-            color: isSimple ?  (color ?? orange) : Colors.white,
+            color: isSimple ? (color ?? orange) : Colors.white,
             width: 1,
             style: BorderStyle.solid,
           ),
         ),
         onPressed: onPressed,
         child: icon != null
-        ? Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon!,
-            const SizedBox(width: defaultSpacing/2),
-            Text(label, style: TextStyle(color: isSimple ? color : textColor, fontWeight: labelFontWeight, fontSize: labelFontSize)),
-          ],
-        )
-        : Text(label, style: TextStyle(color: isSimple ? color : textColor, fontWeight: labelFontWeight, fontSize: labelFontSize)),
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  icon!,
+                  const SizedBox(width: defaultSpacing / 2),
+                  Text(label,
+                      style: TextStyle(
+                          color: isSimple ? color : textColor,
+                          fontWeight: labelFontWeight,
+                          fontSize: labelFontSize)),
+                ],
+              )
+            : Text(label,
+                style: TextStyle(
+                    color: isSimple ? color : textColor,
+                    fontWeight: labelFontWeight,
+                    fontSize: labelFontSize)),
       ),
     );
   }

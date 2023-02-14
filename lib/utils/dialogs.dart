@@ -40,7 +40,6 @@ const soundMap = {
 /// - [showLoading]
 ///
 class Dialog {
-
   static void confirmTerm(BuildContext context, String title, String message,
       Function(bool) callback) {
     showDialog<dynamic>(
@@ -48,18 +47,22 @@ class Dialog {
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: title.regularText(isDarkModeChange: true, context: context, fontSize: 20),
-          content: message.regularText(isDarkModeChange: true, context: context, fontSize: 20),
+          title: title.regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
+          content: message.regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
           actions: <Widget>[
             TextButton(
-              child: 'キャンセル'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+              child: 'キャンセル'.regularText(
+                  isDarkModeChange: true, context: context, fontSize: 16),
               onPressed: () {
                 callback(false);
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: '確認'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+              child: '確認'.regularText(
+                  isDarkModeChange: true, context: context, fontSize: 16),
               onPressed: () {
                 callback(true);
                 Navigator.of(context).pop();
@@ -79,18 +82,22 @@ class Dialog {
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: title.regularText(isDarkModeChange: true, context: context, fontSize: 20),
-          content: message.regularText(isDarkModeChange: true, context: context, fontSize: 20),
+          title: title.regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
+          content: message.regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
           actions: <Widget>[
             TextButton(
-              child: 'キャンセル'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+              child: 'キャンセル'.regularText(
+                  isDarkModeChange: true, context: context, fontSize: 16),
               onPressed: () {
                 callback(false);
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: '実行'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+              child: '実行'.regularText(
+                  isDarkModeChange: true, context: context, fontSize: 16),
               onPressed: () {
                 callback(true);
                 if (isPop) {
@@ -111,11 +118,14 @@ class Dialog {
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: title.regularText(isDarkModeChange: true, context: context, fontSize: 20),
-          content: message.regularText(isDarkModeChange: true, context: context, fontSize: 20),
+          title: title.regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
+          content: message.regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
           actions: <Widget>[
             TextButton(
-              child: 'Ok'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+              child: 'Ok'.regularText(
+                  isDarkModeChange: true, context: context, fontSize: 16),
               onPressed: () {
                 if (callback != null) {
                   callback(true);
@@ -141,7 +151,8 @@ class Dialog {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: (title ?? '').regularText(isDarkModeChange: true, context: context, fontSize: 20),
+          title: (title ?? '').regularText(
+              isDarkModeChange: true, context: context, fontSize: 20),
           contentPadding: const EdgeInsets.all(16.0),
           content: SizedBox(
             height: 100.0,
@@ -167,12 +178,14 @@ class Dialog {
           ),
           actions: <Widget>[
             TextButton(
-                child: 'キャンセル'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+                child: 'キャンセル'.regularText(
+                    isDarkModeChange: true, context: context, fontSize: 16),
                 onPressed: () {
                   Navigator.of(context).pop();
                 }),
             TextButton(
-                child: '送信'.regularText(isDarkModeChange: true, context: context, fontSize: 16),
+                child: '送信'.regularText(
+                    isDarkModeChange: true, context: context, fontSize: 16),
                 onPressed: () {
                   Navigator.of(context).pop();
                   completer.complete(submittedValue);
@@ -203,12 +216,12 @@ class Dialog {
   }
 
   static void showAboutDeliveryOfLeftBehind(
-      BuildContext context,
-      Function(bool) callback,
-      bool isChecked,
-      Function() add,
-      Function() remove,
-      ) {
+    BuildContext context,
+    Function(bool) callback,
+    bool isChecked,
+    Function() add,
+    Function() remove,
+  ) {
     showDialog(
         context: context,
         barrierDismissible: false,
@@ -238,7 +251,8 @@ class Dialog {
                       Row(children: [
                         OneCheckBox(
                             isChecked: isChecked, add: add, remove: remove),
-                        const Text('お届け場所の写真を\n領収書メールで受け取る', overflow: TextOverflow.ellipsis),
+                        const Text('お届け場所の写真を\n領収書メールで受け取る',
+                            overflow: TextOverflow.ellipsis),
                       ]),
                       const SizedBox(height: defaultSpacing),
                       Center(
@@ -267,11 +281,11 @@ class Dialog {
   }
 
   static void ageVerification(
-      BuildContext context,
-      bool isChecked,
-      void Function() add,
-      void Function() remove,
-      ) {
+    BuildContext context,
+    bool isChecked,
+    void Function() add,
+    void Function() remove,
+  ) {
     showDialog(
         context: context,
         barrierDismissible: false,

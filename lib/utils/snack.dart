@@ -13,7 +13,10 @@ class Snack {
             backgroundColor: Colors.blue,
             content: Text(
               msg,
-              style: const TextStyle(fontSize: 15, locale: Locale("ja", "JP"), fontFamilyFallback: [NotoSansJP]),
+              style: const TextStyle(
+                  fontSize: 15,
+                  locale: Locale("ja", "JP"),
+                  fontFamilyFallback: [NotoSansJP]),
               textAlign: TextAlign.center,
             ),
           ),
@@ -25,7 +28,7 @@ class Snack {
   static void showMsg2(BuildContext context, String msg,
       {int milliseconds = 4000}) {
     WidgetsBinding.instance.addPostFrameCallback(
-          (_) {
+      (_) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             duration: Duration(milliseconds: milliseconds),
@@ -33,7 +36,10 @@ class Snack {
             backgroundColor: Colors.orange,
             content: Text(
               msg,
-              style: const TextStyle(fontSize: 15, locale: Locale("ja", "JP"), fontFamilyFallback: [NotoSansJP]),
+              style: const TextStyle(
+                  fontSize: 15,
+                  locale: Locale("ja", "JP"),
+                  fontFamilyFallback: [NotoSansJP]),
               textAlign: TextAlign.center,
             ),
           ),

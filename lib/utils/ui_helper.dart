@@ -50,7 +50,6 @@ const NotoSansJPMedium = 'NotoSansJP-Medium';
 const NotoSansJPLight = 'NotoSansJP-Light';
 const RobotoMedium = 'Roboto-Medium';
 
-
 const emptySizedBox = SizedBox();
 
 const defaultSizedBox = SizedBox(
@@ -275,7 +274,6 @@ const vacancyScarceIcon = Icon(
   Icons.warning_amber,
   color: Colors.yellow,
 );
-
 
 // const vacancyTooLateIcon = Icon(
 //   Icons.clear,

@@ -76,8 +76,7 @@ extension StringConverter on String {
       bool isNumberAdjust = false,
       double letterSpacing = 3.0,
       bool isDarkModeChange = false,
-        required BuildContext context
-      }) {
+      required BuildContext context}) {
     List<FontFeature> _fontFeatures = [];
     if (isNumberAdjust) {
       _fontFeatures.add(const FontFeature.tabularFigures());
@@ -87,17 +86,16 @@ extension StringConverter on String {
     }
     return Text(this,
         style: TextStyle(
-            fontFamilyFallback: const [NotoSansJP],
-            fontFeatures: _fontFeatures,
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-            letterSpacing: letterSpacing,
-            decoration: TextDecoration.none,
-            color: color,
+          fontFamilyFallback: const [NotoSansJP],
+          fontFeatures: _fontFeatures,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          letterSpacing: letterSpacing,
+          decoration: TextDecoration.none,
+          color: color,
         ),
         textAlign: align,
-        locale: const Locale('ja', 'JP')
-    );
+        locale: const Locale('ja', 'JP'));
   }
 
   String get dateTimeStringUTC {
@@ -112,8 +110,8 @@ extension StringConverter on String {
     const step = 4;
 
     for (var i = 0; i < newCardNumber.length; i += step) {
-      newStr += newCardNumber.substring(
-          i, math.min(i + step, newCardNumber.length));
+      newStr +=
+          newCardNumber.substring(i, math.min(i + step, newCardNumber.length));
       if (i + step < newCardNumber.length) newStr += ' ';
     }
     return newStr;

@@ -12,7 +12,6 @@ class SharedPreferenceUtil {
   List<String> get words => _pref.getStringList('words') ?? [];
   set words(List<String> value) => _pref.setStringList('words', value);
 
-
   void removeAll() {}
 
   // main_xxx.dartからのみ呼び出す
