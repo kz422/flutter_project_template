@@ -40,16 +40,16 @@ extension DateTimeConverter on DateTime {
   指定の日付が本日か判断
   */
   bool isToday() {
-    final DateTime _now = DateTime.now();
-    return difference(_now).inDays == 0 && day == _now.day;
+    final DateTime now = DateTime.now();
+    return difference(now).inDays == 0 && day == now.day;
   }
 
   /*
   指定の日付が翌日か判断
   */
   bool isTomorrow() {
-    final DateTime _tomorrow = DateTime.now().add(const Duration(days: 1));
-    return difference(_tomorrow).inDays == 0 && day == _tomorrow.day;
+    final DateTime tomorrow = DateTime.now().add(const Duration(days: 1));
+    return difference(tomorrow).inDays == 0 && day == tomorrow.day;
   }
 
   /*
@@ -141,8 +141,8 @@ extension DateTimeConverter on DateTime {
   指定の日付から今日で何年経過したか算出する
    */
   num passedYear() {
-    final _days = -(difference(DateTime.now()).inDays);
-    return (_days / 365).floor();
+    final days = -(difference(DateTime.now()).inDays);
+    return (days / 365).floor();
   }
 
   /*

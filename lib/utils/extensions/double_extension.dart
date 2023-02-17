@@ -10,16 +10,14 @@ extension DoubleConverter on double {
   }
 
   double responsiveWidthSafeArea(BuildContext context) {
-    final _mediaQuery = MediaQuery.of(context);
-    final double safeArea =
-        _mediaQuery.padding.left + _mediaQuery.padding.right;
-    return this * ((_mediaQuery.size.width - safeArea) / 100);
+    final mediaQuery = MediaQuery.of(context);
+    final double safeArea = mediaQuery.padding.left + mediaQuery.padding.right;
+    return this * ((mediaQuery.size.width - safeArea) / 100);
   }
 
   double responsiveHeightSafeArea(BuildContext context) {
-    final _mediaQuery = MediaQuery.of(context);
-    final double safeArea =
-        _mediaQuery.padding.top + _mediaQuery.padding.bottom;
-    return this * ((_mediaQuery.size.height - safeArea) / 100);
+    final mediaQuery = MediaQuery.of(context);
+    final double safeArea = mediaQuery.padding.top + mediaQuery.padding.bottom;
+    return this * ((mediaQuery.size.height - safeArea) / 100);
   }
 }

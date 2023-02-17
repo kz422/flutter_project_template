@@ -3,27 +3,26 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class OneCheckBox extends StatefulWidget {
+  const OneCheckBox({
+    required this.isChecked,
+    required this.add,
+    required this.remove,
+    Key? key,
+  }) : super(key: key);
   final bool isChecked;
   final Function() add;
   final Function() remove;
 
-  const OneCheckBox(
-      {required this.isChecked,
-      required this.add,
-      required this.remove,
-      Key? key})
-      : super(key: key);
-
   @override
-  _OneCheckBoxState createState() => _OneCheckBoxState();
+  OneCheckBoxState createState() => OneCheckBoxState();
 }
 
-class _OneCheckBoxState extends State<OneCheckBox> {
-  bool _flag = false;
+class OneCheckBoxState extends State<OneCheckBox> {
+  bool flag = false;
 
   @override
   void initState() {
-    _flag = widget.isChecked;
+    flag = widget.isChecked;
     super.initState();
   }
 
@@ -32,7 +31,7 @@ class _OneCheckBoxState extends State<OneCheckBox> {
     return Center(
       child: Checkbox(
         activeColor: primaryColor,
-        value: _flag,
+        value: flag,
         onChanged: (value) {
           if (value != null) {
             if (value) {
@@ -41,7 +40,7 @@ class _OneCheckBoxState extends State<OneCheckBox> {
               widget.remove();
             }
             setState(() {
-              _flag = value;
+              flag = value;
             });
           }
         },

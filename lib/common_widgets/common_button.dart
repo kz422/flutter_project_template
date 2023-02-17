@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class CommonButton extends StatelessWidget {
-  const CommonButton(
-      {required this.label,
-      this.onPressed,
-      this.color = orange,
-      this.textColor = Colors.white,
-      this.width = 88,
-      this.height = 38,
-      this.labelFontSize = 11,
-      this.labelFontWeight = FontWeight.normal,
-      this.icon,
-      this.isSimple = false,
-      this.isEnable = false,
-      Key? key})
-      : super(key: key);
+  const CommonButton({
+    required this.label,
+    this.onPressed,
+    this.color = orange,
+    this.textColor = Colors.white,
+    this.width = 88,
+    this.height = 38,
+    this.labelFontSize = 11,
+    this.labelFontWeight = FontWeight.normal,
+    this.icon,
+    this.isSimple = false,
+    this.isEnable = false,
+    Key? key,
+  }) : super(key: key);
   final String label;
   final Function()? onPressed;
   final Color? color;
@@ -43,8 +43,6 @@ class CommonButton extends StatelessWidget {
           ),
           side: BorderSide(
             color: isSimple ? (color ?? orange) : Colors.white,
-            width: 1,
-            style: BorderStyle.solid,
           ),
         ),
         onPressed: onPressed,
@@ -54,18 +52,24 @@ class CommonButton extends StatelessWidget {
                 children: [
                   icon!,
                   const SizedBox(width: defaultSpacing / 2),
-                  Text(label,
-                      style: TextStyle(
-                          color: isSimple ? color : textColor,
-                          fontWeight: labelFontWeight,
-                          fontSize: labelFontSize)),
+                  Text(
+                    label,
+                    style: TextStyle(
+                      color: isSimple ? color : textColor,
+                      fontWeight: labelFontWeight,
+                      fontSize: labelFontSize,
+                    ),
+                  ),
                 ],
               )
-            : Text(label,
+            : Text(
+                label,
                 style: TextStyle(
-                    color: isSimple ? color : textColor,
-                    fontWeight: labelFontWeight,
-                    fontSize: labelFontSize)),
+                  color: isSimple ? color : textColor,
+                  fontWeight: labelFontWeight,
+                  fontSize: labelFontSize,
+                ),
+              ),
       ),
     );
   }
