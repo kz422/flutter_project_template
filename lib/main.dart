@@ -27,7 +27,7 @@ class _AppBase extends StatelessWidget {
     const env = String.fromEnvironment('flavor');
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text(env),
       ),
     );
