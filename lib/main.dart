@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'common_widgets/nothing.dart';
 import 'providers/router.dart';
 
 Future<void> main() async {
@@ -41,7 +42,7 @@ class AppBase extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text(env),
+            env == 'dev' ? const Text(env) : const Nothing(),
             TextButton(
               onPressed: () {
                 context.go('/info');
